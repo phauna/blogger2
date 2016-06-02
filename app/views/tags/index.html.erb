@@ -2,7 +2,7 @@
 
 <ul id="tags">
 
-  <% @tags.each do |tag| %>
+  <% @articles.each do |tag| %>
     <li>
 	  <%= link_to tag.title, tag_path(tag) %>
 	</li>
@@ -10,4 +10,5 @@
   
 </ul>
 
+<%= link_to "delete", tag_path(@tag), method: :delete, data: {confirm: "Really delete the tag?"} %>
 <%= link_to "Create a New Article", new_article_path, class: "new_article" %>
